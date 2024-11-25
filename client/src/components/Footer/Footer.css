@@ -1,0 +1,129 @@
+.footer {
+    background: linear-gradient(45deg, #86a789, #6d9e76);
+    color: #ffffff;
+    padding: 20px 0; /* Removed extra horizontal padding */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    width: 100%; /* Ensures footer spans full width */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%; /* Spans full width */
+    margin: 0; /* Removes auto-centering margin */
+    padding: 0 10px; /* Tight padding for sides */
+}
+
+.footer-logo,
+.footer-links,
+.footer-contact,
+.footer-social,
+.footer-query {
+    flex: 1;
+    margin: 0 5px; /* Small margin between sections */
+}
+
+.footer-logo-img {
+    width: 80px;
+    height: 80px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.1);
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4,
+.footer-query h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #ffd700;
+}
+.social-link {
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: #ffdd57;
+    transform: scale(1.2);
+  }
+
+.footer-link {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 5px 0;
+    font-weight: 500;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffdd57;
+    transform: translateX(5px);
+}
+
+.footer-query .query-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0; /* Removes default form margin */
+}
+
+.query-field,
+.contact-field {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    color: #333;
+    width: 100%; /* Ensures fields are responsive */
+    box-sizing: border-box; /* Includes padding in width */
+}
+
+.query-submit {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #ffdd57;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px; /* Smaller button width */
+    align-self: center; /* Center the button */
+}
+
+.query-submit:hover {
+    background-color: #ffc107;
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Reduced vertical spacing */
+    font-size: 0.9rem;
+    color: #e1e1e1;
+    text-align: center;
+}
+
+/* Body Margin Reset */
+body {
+    margin: 0;
+    padding: 0;
+}

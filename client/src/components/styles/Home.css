@@ -1,0 +1,59 @@
+/* Intro.css */
+.intro-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1450px;
+    margin: 40px auto;
+  }
+  
+  .intro-text {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .intro-text h2 {
+    font-size: 2rem;
+    color: #00a379;
+    margin-bottom: 75px;
+    margin-left: 200px;
+  }
+  
+  .intro-text p {
+    text-align: justify;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    color: #333;
+  }
+  
+  .try-free-button {
+    background-color: #ffdd57;
+    color: black;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 250px;
+  }
+  
+  .try-free-button:hover {
+    background-color: #0c4f42;
+  }
+  
+  .intro-gif {
+    flex: 1;
+  }
+  
+  .intro-gif img {
+    width: 100%; /* Make the gif responsive */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
