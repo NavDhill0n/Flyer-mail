@@ -1,59 +1,136 @@
-/* Intro.css */
+/* Intro Card */
 .intro-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 1450px;
-    margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f0f9ff, #e4f4e8);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1400px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+
+/* Text Section */
+.intro-text {
+  flex: 1;
+  margin-right: 40px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  color: #008f68;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.intro-text p {
+  text-align: justify;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+  color: #444;
+}
+
+/* Button Styling */
+/* .try-free {
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(135deg, #ffdd57, #f7b32b);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.try-free:hover {
+  background: linear-gradient(135deg, #f7b32b, #ff9f43);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+} */
+/* Updated Button Styling */
+.try-free {
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(135deg, #ffdd57, #f7b32b);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  pointer-events: auto; /* Ensure it's clickable */
+  position: relative;
+  z-index: 10; /* Ensure it's on top */
+}
+
+.try-free:hover {
+  background: linear-gradient(135deg, #f7b32b, #ff9f43);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.try-free:focus {
+  outline: none;
+  background: linear-gradient(135deg, #f7b32b, #ff9f43);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.try-free:active {
+  background: #ff9f43;
+  transform: translateY(0);
+}
+
+
+
+/* GIF Section */
+.intro-gif {
+  flex: 1;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+.intro-gif img {
+  width: 90%; /* Adjust for responsive design */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.intro-gif img:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
-  
-  .intro-text {
-    flex: 1;
-    margin-right: 20px;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .intro-text h2 {
-    font-size: 2rem;
-    color: #00a379;
-    margin-bottom: 75px;
-    margin-left: 200px;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
   }
-  
-  .intro-text p {
-    text-align: justify;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-family: "Montserrat", sans-serif;
-    color: #333;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .try-free-button {
-    background-color: #ffdd57;
-    color: black;
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-left: 250px;
-  }
-  
-  .try-free-button:hover {
-    background-color: #0c4f42;
-  }
-  
-  .intro-gif {
-    flex: 1;
-  }
-  
-  .intro-gif img {
-    width: 100%; /* Make the gif responsive */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+}

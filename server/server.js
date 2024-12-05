@@ -9,7 +9,13 @@ const bcrypt = require("bcrypt");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
+const bodyParser = require('body-parser');
 
+
+ // Import
+
+
+ // Import the sendEmails route
 
 const PORT = 5000;
 const app = express();
@@ -27,13 +33,13 @@ app.use([
 
 // MongoDB Connection
 mongoose
-  .connect('mongodb://localhost:27017/test', { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect('mongodb://localhost:27017/new', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB:", err));
 
 // Session store
 const sessionStore = new MongoStore({
-  mongoUrl: 'mongodb://localhost:27017/test',
+  mongoUrl: 'mongodb://localhost:27017/new',
   collectionName: "session",
 });
 
@@ -237,7 +243,19 @@ const authenticator = (req, res, next) => {
   next();
 };
 
+app.post('/uploadContacts', require('./Routes/uploadContacts'));
+app.post('/saveTemplate', require('./Routes/saveTemplate'));
 
+const uploadContactsRoute = require('./Routes/uploadContacts');
+const saveTemplateRoute = require('./Routes/saveTemplate');
+
+app.use('/uploadContacts', uploadContactsRoute);
+app.use('/saveTemplate', saveTemplateRoute);
+const sendEmailsRoute = require('./Routes/sendEmails');
+app.use('/sendEmails', sendEmailsRoute); // Correct usage
+
+const contactUsRoute = require('./Routes/contactUs');
+app.use('/contact', contactUsRoute);
 
 // Start server
 app.listen(PORT, () => {

@@ -1,0 +1,75 @@
+/* Pricing Page Container */
+.pricing {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  /* Pricing Card */
+  .pricing-card {
+    background: linear-gradient(135deg, #f8f8f8, #ffffff);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Title */
+  .pricing-card h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Price */
+  .pricing-card .price {
+    font-size: 2.5rem;
+    color: #008f68;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
+  /* Features List */
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .pricing-card ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Select Button */
+  .select-plan {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffdd57, #f7b32b);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .select-plan:hover {
+    background: linear-gradient(135deg, #f7b32b, #ff9f43);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const authDatabase = mongoose.createConnection('mongodb://127.0.0.1:27017/test');
+const authDatabase = mongoose.createConnection('mongodb://127.0.0.1:27017/new');
 const schema = new mongoose.Schema({
   userName: {
     type: String,

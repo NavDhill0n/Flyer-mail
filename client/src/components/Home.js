@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import "./styles/Home.css";
 
-import Footer from "./Footer/Footer";
+const Home = () => {
+  const navigate = useNavigate();
 
-const Home = () => { // Fix: Add "= () =>" to define the function properly
   return (
     <>
       <Header />
@@ -14,18 +16,28 @@ const Home = () => { // Fix: Add "= () =>" to define the function properly
           <p>
             Optimize your email experience with our free bulk email service! Effortlessly reach your entire audience with engaging marketing emails, backed by robust deliverability tools and seamless automation. We're dedicated to helping you send impactful emails without the stress.
           </p>
-          <a href="/contactupload" className="try-free-button">Try For Free</a>
+          <button
+            className="try-free"
+            tabIndex={0} // Ensure focus
+            onMouseEnter={(e) => e.target.focus()} // Focus on hover
+            onClick={() => {
+              console.log("Navigating to /ContactUpload...");
+              navigate("/ContactUpload");
+            }}
+          >
+            Try For Free
+          </button>
         </div>
         <div className="intro-gif">
-          <img 
-            src={'/intro.gif'} // Add the gif name and path
+          <img
+            src={"/intro.gif"}
             alt="Flyer Demo GIF"
             className="gif"
+            style={{ zIndex: 1 }}
           />
         </div>
-      
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

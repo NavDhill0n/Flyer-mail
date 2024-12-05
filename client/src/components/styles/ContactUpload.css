@@ -1,0 +1,90 @@
+.contact-upload {
+    display: flex;
+    justify-content: space-between; /* Ensures space between the form and video */
+    padding: 20px;
+    max-width: 1450px;
+    margin: 40px auto;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex-wrap: wrap; /* Allows wrapping if the content overflows */
+}
+
+.contact {
+    flex: 0 0 48%; /* Form will take up 48% of the container */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    color: #00a379;
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: none;
+    background-color: #00a379;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0c4f42;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.contacts-preview {
+    margin-top: 20px;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Video Container on the Right */
+.video {
+    flex: 0 0 48%; /* Video will take up 48% of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button, input[type="file"] {
+    position: relative;
+    z-index: 1000; /* Bring the elements to the top */
+    pointer-events: auto; /* Ensure they can be interacted with */
+}

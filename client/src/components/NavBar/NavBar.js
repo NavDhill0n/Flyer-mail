@@ -8,16 +8,16 @@ const NavBar = () => {
     <nav className="navbar">
       <ul className="navbar-menu">
         <li>
-          <Link to="/">HOME</Link>
+          <Link to="/home">HOME</Link>
         </li>
         <li>
-          <Link to="/how-it-works">HOW IT WORKS</Link>
+          <Link to="/howitworks">HOW IT WORKS</Link>
         </li>
         <li>
-          <Link to="/pricing">PRICING</Link>
+          <Link to="/pricingpage">PRICING</Link>
         </li>
         <li>
-          <Link to="/contact-us">CONTACT US</Link>
+          <Link to="/contactus">CONTACT US</Link>
         </li>
         <li>
           <Link to="/help">HELP</Link>
