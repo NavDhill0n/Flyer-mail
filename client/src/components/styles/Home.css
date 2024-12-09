@@ -1,5 +1,5 @@
 /* Intro Card */
-.intro-card {
+/* .intro-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,9 +7,27 @@
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 60px auto;
   overflow: hidden;
+} */
+
+.intro-card {
+  /*width: 90%;*/
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(20px); /* Translucent glass-like effect */
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Text Section */
@@ -21,7 +39,7 @@
 
 .intro-text h2 {
   font-size: 2.5rem;
-  color: #008f68;
+  color: #4e7d5e;
   margin-bottom: 30px;
   font-family: "Poppins", sans-serif;
 }
@@ -32,7 +50,7 @@
   line-height: 1.8;
   margin-bottom: 30px;
   font-family: "Roboto", sans-serif;
-  color: #444;
+  color: #000000;
 }
 
 /* Button Styling */
@@ -134,3 +152,22 @@
     transform: translateX(0);
   }
 }
+.step-gif video {
+  width: 100%; /* Ensures the video is responsive */
+  max-width: 600px; /* Sets a max width for larger screens */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better visuals */
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column; /* Ensures video and text are stacked */
+  align-items: center; /* Center content */
+  justify-content: space-between;
+}
+
+.step-card.reverse {
+  flex-direction: column-reverse; /* Reverses the order for the second step */
+}
+

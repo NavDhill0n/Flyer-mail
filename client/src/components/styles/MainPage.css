@@ -19,7 +19,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  
 }
+
 
 body {
   /* background: linear-gradient(to right, var(--grey),var(--bg),url(./utils/bg1.jpg)); */
@@ -120,6 +122,7 @@ body:before {
   color: var(--text);
 }
 .whole {
+  margin-top: 40px;
   color: var(--text);
 }
 form h1 {
@@ -278,3 +281,54 @@ form h1 {
 .Toastify__close-button > svg {
   filter: brightness(200%);
 }
+#body-head {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-size: 4.5rem; /* Large and bold */
+  font-weight: 800; /* Heavier for strong emphasis */
+  letter-spacing: 0.2rem;
+  background: linear-gradient(90deg, #86a786, #4e7d5e, #a0d995);
+  background-size: 300% 300%;
+  -webkit-background-clip: text; /* Vendor prefix for Safari */
+  background-clip: text; /* Standard property */
+  -webkit-text-fill-color: transparent; /* Vendor prefix for Safari */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+/* Hover effects */
+#body-head:hover {
+  transform: scale(1.05); /* Slight enlargement */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

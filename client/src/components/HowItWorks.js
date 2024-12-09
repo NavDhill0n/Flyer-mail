@@ -1,11 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Lottie from "react-lottie";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import "./styles/HowItWorks.css";
 
 const HowItWorks = () => {
   const navigate = useNavigate();
+  const [contactAnimation, setContactAnimation] = useState(null);
+  const [emailTemplateAnimation, setEmailTemplateAnimation] = useState(null);
+  const [doneAnimation, setDoneAnimation] = useState(null);
+
+  // Default options for Lottie animations
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  // Fetch animation JSON data
+  useEffect(() => {
+    const fetchAnimationData = async (fileName, setAnimation) => {
+      try {
+        const response = await fetch(`/${fileName}`); // Directly fetch from the public folder
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${fileName}`);
+        }
+        const data = await response.json();
+        setAnimation(data);
+      } catch (error) {
+        console.error("Error fetching animation data:", error);
+      }
+    };
+
+    fetchAnimationData("file.json", setContactAnimation);
+    fetchAnimationData("mail.json", setEmailTemplateAnimation);
+    fetchAnimationData("sent.json", setDoneAnimation);
+  }, []);
 
   return (
     <>
@@ -30,7 +63,11 @@ const HowItWorks = () => {
                 <button onClick={() => navigate("/uploadContacts")}>Upload Contacts</button>
               </div>
               <div className="step-gif">
-                <img src="path/to/contact-upload.gif" alt="Contact Upload" />
+                {contactAnimation ? (
+                  <Lottie options={{ ...defaultOptions, animationData: contactAnimation }} />
+                ) : (
+                  <p>Loading animation...</p>
+                )}
               </div>
             </div>
           </div>
@@ -38,6 +75,13 @@ const HowItWorks = () => {
           {/* Step 2 */}
           <div className="step-card reverse">
             <div className="step-content">
+              <div className="step-gif">
+                {emailTemplateAnimation ? (
+                  <Lottie options={{ ...defaultOptions, animationData: emailTemplateAnimation }} />
+                ) : (
+                  <p>Loading animation...</p>
+                )}
+              </div>
               <div className="step-text">
                 <div className="step-number">Step 2</div>
                 <h3>Email Template</h3>
@@ -46,9 +90,6 @@ const HowItWorks = () => {
                   Add subject lines, body content, and any attachments if needed.
                 </p>
                 <button onClick={() => navigate("/EmailTemp")}>Create Email Template</button>
-              </div>
-              <div className="step-gif">
-                <img src="path/to/email-template.gif" alt="Email Template" />
               </div>
             </div>
           </div>
@@ -66,7 +107,11 @@ const HowItWorks = () => {
                 <button onClick={() => navigate("/sendEmails")}>Send Emails</button>
               </div>
               <div className="step-gif">
-                <img src="path/to/done.gif" alt="Done" />
+                {doneAnimation ? (
+                  <Lottie options={{ ...defaultOptions, animationData: doneAnimation }} />
+                ) : (
+                  <p>Loading animation...</p>
+                )}
               </div>
             </div>
           </div>

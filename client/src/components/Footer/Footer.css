@@ -1,11 +1,12 @@
 .footer {
-    background: linear-gradient(45deg, #86a789, #6d9e76);
+    background: linear-gradient(45deg, #86a786, #6d9e76);
     color: #ffffff;
     padding: 20px 0; /* Removed extra horizontal padding */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+    
     text-align: center;
-    width: 100%; /* Ensures footer spans full width */
+    
+    width: 100vw; /* Ensures footer spans full width */
 }
 
 .footer-container {
@@ -96,6 +97,9 @@
     color: #333;
     width: 100%; /* Ensures fields are responsive */
     box-sizing: border-box; /* Includes padding in width */
+}
+.query-field{
+    height: 60px;
 }
 
 .query-submit {

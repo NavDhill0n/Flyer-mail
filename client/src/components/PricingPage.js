@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import { FaCheckCircle } from "react-icons/fa";
 import "./styles/PricingPage.css";
 
 const PricingPage = () => {
@@ -12,7 +13,9 @@ const PricingPage = () => {
         "Up to 500 emails/month",
         "Basic reporting",
         "Community support",
+        "Email tracking",
       ],
+      badge: "Best Value",
     },
     {
       title: "Pro Plan",
@@ -23,6 +26,7 @@ const PricingPage = () => {
         "Priority support",
         "Automation tools",
       ],
+      badge: "Most Popular",
     },
     {
       title: "Enterprise Plan",
@@ -30,9 +34,10 @@ const PricingPage = () => {
       features: [
         "Unlimited emails",
         "Custom reports",
-        "Dedicated account manager",
+        "Priority onboarding",
         "API access",
       ],
+      badge: "Premium",
     },
   ];
 
@@ -42,11 +47,17 @@ const PricingPage = () => {
       <div className="pricing">
         {plans.map((plan, index) => (
           <div className="pricing-card" key={index}>
+            <div className="badge">{plan.badge}</div>
             <h3>{plan.title}</h3>
-            <p className="price">{plan.price}</p>
+            <p className="price">
+              {plan.price} <span>/ month</span>
+            </p>
             <ul>
               {plan.features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
+                <li key={idx}>
+                  <FaCheckCircle />
+                  {feature}
+                </li>
               ))}
             </ul>
             <button className="select-plan">Select Plan</button>

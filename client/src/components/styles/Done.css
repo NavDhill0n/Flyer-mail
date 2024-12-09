@@ -1,5 +1,8 @@
 /* src/pages/Done.css */
-
+.donepage{
+  padding: 40px;
+  width: 1450px;
+}
 .done {
     text-align: center;
     padding: 40px;

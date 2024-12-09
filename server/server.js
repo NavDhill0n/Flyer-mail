@@ -221,7 +221,7 @@ app.post("/forgotpass", async (req, res) => {
     const mailOptions = {
       from: "your-email@gmail.com",
       to: email,
-      subject: "Forgot password for task manager",
+      subject: "Forgot password for flyer",
       text: `${process.env.FRONTEND_DOMAIN}/ResetPass/${user._id}/${token}`,
     };
 

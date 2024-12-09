@@ -20,7 +20,7 @@ const NavBar = () => {
           <Link to="/contactus">CONTACT US</Link>
         </li>
         <li>
-          <Link to="/help">HELP</Link>
+          <Link to="/helppage">HELP</Link>
         </li>
       </ul>
       

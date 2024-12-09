@@ -16,13 +16,15 @@ const Done = () => {
   return (
     <>
     <Header />
-    <div className="done">
-      <h2>Emails Sent Successfully!</h2>
-      <p>Your email template has been saved, and the emails have been successfully sent to all contacts.</p>
-      <button onClick={handleRedirect} className="done-button">
-        DONE
-      </button>
-      
+    <div className='done-page'>
+      <div className="done">
+        <h2>Emails Sent Successfully!</h2>
+        <p>Your email template has been saved, and the emails have been successfully sent to all contacts.</p>
+        <button onClick={handleRedirect} className="done-button">
+          DONE
+        </button>
+        
+      </div>
     </div>
     <Footer />
     </>

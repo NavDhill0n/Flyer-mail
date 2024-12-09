@@ -1,75 +1,222 @@
 /* Pricing Page Container */
 .pricing {
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+  width: 1450px;
+  margin: 60px auto;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  /* Pricing Card */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pricing Card */
+.pricing-card {
+  flex: 1 1 calc(33.333% - 20px);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover with 3D Effect */
+.pricing-card:hover {
+  transform: scale(1.05) rotateX(3deg) rotateY(-3deg);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Lighting Effect */
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+.pricing-card:hover::before {
+  animation: rotateLight 3s linear infinite;
+}
+
+@keyframes rotateLight {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+/* Badge for Highlighting Plans */
+.pricing-card .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(145deg, #ff5f5f, #ff9f9f);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Card Title */
+.pricing-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated Gradient Price */
+/* .pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+  background: linear-gradient(90deg, #007acc, #00a8ff, #007acc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite;
+} */
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 20px 0;
+
+  background: linear-gradient(90deg, #000000, #2b2b2a, #000000);
+  background-clip: text; /* Standard propert
+  -webkit-background-clip: text; /* Webkit-specific property for Safari/Chrome */
+  -webkit-text-fill-color: transparent; /* Needed for WebKit browsers */
+  color: transparent; /* Fallback for other browsers */
+  animation: gradientMove 3s infinite;
+}
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* Features List */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card ul li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-card ul li svg {
+  color: #00a859;
+}
+
+/* Select Plan Button with Ripple Effect */
+.select-plan {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background: linear-gradient(135deg, #e3b838, #86c786);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border:none;
+}
+
+.select-plan:hover {
+  background: linear-gradient(135deg, #ffc107, #3b513b);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+.pricing-card:nth-child(3) .select-plan {
+  border: none;
+  outline: none;
+}
+.pricing-card:nth-child(1) .select-plan {
+  margin-top: 11px;
+}
+.pricing-card:nth-child(1) ul {
+  margin-top: 67px;
+}
+
+.select-plan::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+
+.select-plan:hover::after {
+  width: 300%;
+  height: 300%;
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .pricing-card {
-    background: linear-gradient(135deg, #f8f8f8, #ffffff);
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+    flex: 1 1 calc(50% - 20px);
   }
-  
-  .pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    flex-direction: column;
   }
-  
-  /* Card Title */
-  .pricing-card h3 {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 20px;
+
+  .pricing-card {
+    flex: 1 1 100%;
   }
-  
-  /* Price */
-  .pricing-card .price {
-    font-size: 2.5rem;
-    color: #008f68;
-    margin: 20px 0;
-    font-weight: bold;
-  }
-  
-  /* Features List */
-  .pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-  }
-  
-  .pricing-card ul li {
-    font-size: 1.1rem;
-    color: #555;
-    margin: 10px 0;
-    font-family: "Roboto", sans-serif;
-  }
-  
-  /* Select Button */
-  .select-plan {
-    display: inline-block;
-    background: linear-gradient(135deg, #ffdd57, #f7b32b);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .select-plan:hover {
-    background: linear-gradient(135deg, #f7b32b, #ff9f43);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  }
-  
+}

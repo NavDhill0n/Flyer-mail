@@ -1,76 +1,105 @@
+
 .header {
+  width: 100vw; /* Ensure header spans the full viewport width */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #86a789;
-  padding: 10px 20px; /* Adjust for better spacing */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow to the header */
-  position: relative;
+  background-color: #86a786;
+  padding: 10px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  margin: 0; /* Remove any unwanted margins */
+  box-sizing: border-box; /* Include padding and border in width calculations */
 }
-  .logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    background-color: #ffffff; /* White background for the circle */
-    border-radius: 50%; /* Make it circular */
-  }
 
-  .logo {
-    width: 100px; /* Adjust the size of the logo */
-    height: 100px;
-    margin-right: 12px;
-    transition: transform 0.3s ease-in-out; /* Add smooth hover effect */
-  }
-  .logo:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-  }
-  .nav-links {
-    position: relative; /* Ensure that nav-links can overlap if needed */
-  }
-  .nav-links a{
-    padding: 0.5rem 1.5rem;
-    background-color: #ffdd57;
-    color: #000000;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
-    cursor: pointer; 
-  }
 
-  .nav-links a:hover {
-    background-color: #ffc107;
-  }
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1; /* Ensure navbar stretches to take up space between logo and try-free button */
-    margin-left: 20px;
-    margin-right: 10px;
-  }
-  .logout-btn {
-    z-index: 10;
-    padding: 0.5rem 1.5rem;
-    background-color: #ffdd57;
-    color: #000000;
-    font-size: 1rem;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
 
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
-  }
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%; /* Make it circular */
+}
+
+.logo {
+  width: 100px; /* Adjust the size of the logo */
+  height: 100px;
+  margin-right: 12px;
+  transition: transform 0.3s ease-in-out; /* Add smooth hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.nav-links {
+  position: relative; /* Ensure that nav-links can overlap if needed */
+}
+
+.nav-links a {
+  padding: 0.5rem 1.5rem;
+  background-color: #ffdd57;
+  color: #000000;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  background-color: #ffc107;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ensure navbar stretches to take up space between logo and try-free button */
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.logout-btn {
+  z-index: 10;
+  padding: 0.5rem 1.5rem;
+  background-color: #ffdd57;
+  color: #000000;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   
-  .logout-btn:hover {
-    background-color: #ffc107;
-  }
-  
-    
+  margin-right: 40px;
+}
+
+.logout-btn:hover {
+  background-color: #ffc107;
+}
+
+/* Ensure no gaps around the header */
+/* body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+} */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
+}
+
+
+.header {
+  box-sizing: border-box; /* Include padding and border in width/height calculations */
+}

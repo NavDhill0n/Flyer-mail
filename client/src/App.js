@@ -11,6 +11,7 @@ import EmailTemplate from './components/EmailTemplate';
 import Done from './components/Done';
 import ContactUs from "./components/ContactUs";
 import HowItWorks from "./components/HowItWorks";
+import HelpPage from "./components/HelpPage";
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
         <Route path="/pricingpage" element={<PricingPage/>}/>
         <Route path="/contactus" element={<ContactUs/>}/>
         <Route path="/howitworks" element={<HowItWorks/>}/>
+        <Route path="/helppage" element={<HelpPage />}/>
 
       </Routes>
     </BrowserRouter>
