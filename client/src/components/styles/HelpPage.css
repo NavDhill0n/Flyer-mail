@@ -10,15 +10,27 @@
   }
   
   /* Card Styling */
-  .help-card {
+  /* .help-card {
     background: #ffffff; /* White card background */
-    padding: 30px;
+    /* padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     width: 100%;
     font-family: "Roboto", sans-serif;
-  }
+  }  */
+    /* Card Styling */
+.help-card {
+  background: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  backdrop-filter: blur(10px); /* Optional: keep the blur effect */
+}
+
   
   /* Header Styling */
   .help-page-header {

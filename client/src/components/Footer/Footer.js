@@ -20,15 +20,15 @@ const Footer = () => {
         </div>
         <div className="footer-links">
           <h4>Quick Links</h4>
-          <a href="/about" className="footer-link">About Us</a>
-          <a href="/features" className="footer-link">Features</a>
-          <a href="/contact" className="footer-link">Contact</a>
-          <a href="/privacy" className="footer-link">Privacy Policy</a>
+          <a  className="footer-link">About Us</a>
+          <a  className="footer-link">Features</a>
+          <a  className="footer-link">Contact</a>
+          <a className="footer-link">Privacy Policy</a>
         </div>
         <div className="footer-contact">
           <h4>Contact Us</h4>
-          <p><FaEnvelope /> support@flyer.com</p>
-          <p><FaPhone /> +1 (123) 456-7890</p>
+          <p><FaEnvelope /> flyermail01@gmail.com</p>
+          <p><FaPhone /> +1 (9876) 543-210</p>
         </div>
         <div className="footer-query">
           <h4>Submit Your Query</h4>

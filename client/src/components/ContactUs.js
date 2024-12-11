@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+
 import "./styles/ContactUs.css";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -88,7 +90,8 @@ const ContactUs = () => {
         <form className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="name">Your Name</label>
           <div className="input-container">
-            <FaEnvelope />
+          <FaUser />
+
             <input
               type="text"
               id="name"
